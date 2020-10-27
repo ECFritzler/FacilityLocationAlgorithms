@@ -20,11 +20,11 @@ import itertools
 def initGraph(n, f):
 	Graph = nx.path_graph(n)
 	
-	#Initialize weights
-	for i in range(0, n):
-		weight = random.randint(1, 20)
-		Graph.node[i]['weight'] = weight
-		Graph.node[i]['index'] = i
+    #Initialize weights
+    for i in range(0, n):
+        weight = random.randint(1, 20)
+        Graph.node[i]['weight'] = weight
+        Graph.node[i]['index'] = i
 	
 	#initialize lengths		
 	for i in range(1, n):
@@ -35,7 +35,16 @@ def initGraph(n, f):
 	nx.write_gml(Graph, f)
 	return Graph
 
-
+# Function to check if the network is a path
+# Property of paths: number of nodes - number of edges = 1
+def isPath(Graph):
+	edges = nx.number_of_edges(Graph)
+	nodes = nx.number_of_nodes(Graph)
+	
+	if((nodes - edges) != 1):
+		return False
+	else:
+		return True
 		
 # Function to check if the nodes all have weights		
 def haveWeights(Graph):
