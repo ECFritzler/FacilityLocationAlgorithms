@@ -35,16 +35,7 @@ def initGraph(n, f):
 	nx.write_gml(Graph, f)
 	return Graph
 
-# Function to check if the network is a path
-# Property of paths: number of nodes - number of edges = 1
-def isPath(Graph):
-	edges = nx.number_of_edges(Graph)
-	nodes = nx.number_of_nodes(Graph)
-	
-	if((nodes - edges) != 1):
-		return False
-	else:
-		return True
+
 		
 # Function to check if the nodes all have weights		
 def haveWeights(Graph):
