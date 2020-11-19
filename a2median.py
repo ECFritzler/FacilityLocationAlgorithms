@@ -44,7 +44,7 @@ def allNodesHaveWeightsAndLengths(G):
                 break
 
     if(wrongLengthVals):
-        print("A length between vertices exists that is less than 1, exiting!")
+        print("Found a vertex length of <1, exiting!")
         return False
 
     if(wrongWeightVals):
