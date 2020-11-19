@@ -12,7 +12,7 @@ import os
 from random import randint
 
 # ----------------------------------------------------------------------------
-# Function Definitions 
+# Function Definitions
 # ----------------------------------------------------------------------------
 
 
@@ -24,7 +24,7 @@ def isNotSimplePath(G, startNode, endNode):
     else:
        return True
 
-# Check if the graph has proper weights and lengths 
+# Check if the graph has proper weights and lengths
 def allNodesHaveWeightsAndLengths(G):
     wrongLengthVals = False
     wrongWeightVals = False
@@ -172,7 +172,8 @@ if (not (isNotSimplePath(G, 0, len(G) - 1))):
 
 # Check if the graph has nodes without weight and length
 if (not allNodesHaveWeightsAndLengths(G)):
-    print("Not all nodes have correctly set weight and length attributes, exiting!")
+    print("Not all nodes have correctly set weight and length attributes")
+    print("Script will now quit")
     exit()
 
 nx.write_gml(G, file)
